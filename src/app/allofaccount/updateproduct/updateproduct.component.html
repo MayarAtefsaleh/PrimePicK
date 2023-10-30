@@ -1,0 +1,117 @@
+<div class="container">
+  <h1 class="mb-5 mx-lg-5">Update Product<span> Details</span></h1>
+  <form #addProduct="ngForm" (ngSubmit)="submit(addProduct.value)">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="border  rounded  p-3 mb-5" id="myDiv">
+      <div class="form-outline mb-4">
+        <div class="box__input border rounded d-flex flex-column justify-content-center align-items-center">
+          <div class="icon d-flex align-items-center justify-content-center">
+            <i class="bi bi-image" style="font-size: 40px;"></i>
+          </div>
+          <h2 class="pt-3 fw-bold pb-3 pic-title">Add a photo</h2>
+          <div class="mb-3">
+            <!-- <img src="{{base64}}" alt="" class="w-100 imagee"> -->
+            <input class="form-control" type="text" id="formFileMultiple" name="addphoto" required #photo="ngModel"
+              [(ngModel)]="data.addphoto" placeholder="Add photo URL">
+            <div [hidden]="photo.valid || photo.untouched" class="alert alert-danger" role="alert">
+              <small *ngIf="photo.errors?.['required']">Photo URL is required</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Text input -->
+      <div class="form-outline mb-4">
+        <label class="form-label fw-bold" for="form6Example3">Title</label>
+        <input type="text" id="form6Example3" class="form-control" placeholder="Name of item" name="title"
+          #itemtitle="ngModel" [(ngModel)]="data.title" required />
+        <div [hidden]="itemtitle.valid || itemtitle.untouched" class="alert alert-danger" role="alert">
+          <small *ngIf="itemtitle.errors?.['required']">Item title is required</small>
+        </div>
+      </div>
+
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label fw-bold" for="form6Example1">Category</label>
+            <input type="text" id="form6Example1" class="form-control" placeholder="Write Category" name="category"
+              #itemcategory="ngModel" [(ngModel)]="data.category" required />
+            <div [hidden]="itemcategory.valid || itemcategory.untouched" class="alert alert-danger" role="alert">
+              <small *ngIf="itemcategory.errors?.['required']">Item category is required</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label fw-bold" for="form6Example2">Condition</label>
+            <input type="text" id="form6Example2" class="form-control" placeholder="Write Condition" name="condition"
+              #itemcondition="ngModel" [(ngModel)]="data.condition" required />
+            <div [hidden]="itemcondition.valid || itemcondition.untouched" class="alert alert-danger" role="alert">
+              <small *ngIf="itemcondition.errors?.['required']">Item condition is required</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text input -->
+      <div class="form-outline mb-4">
+        <label class="form-label fw-bold" for="form6Example3">Price</label>
+        <input type="text" id="form6Example3" class="form-control" placeholder="Price of item" name="price"
+          #itemprice="ngModel" [(ngModel)]="data.price" required />
+        <div [hidden]="itemprice.valid || itemprice.untouched" class="alert alert-danger" role="alert">
+          <small *ngIf="itemprice.errors?.['required']">Item price is required</small>
+        </div>
+
+      </div>
+      <!-- Text input -->
+      <div class="row mb-4">
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label fw-bold" for="form6Example1">Location</label>
+            <input type="text" id="form6Example1" class="form-control" placeholder="Seller`s Location" name="location"
+              #sellerlocation="ngModel" [(ngModel)]="data.location" required />
+            <div [hidden]="sellerlocation.valid || sellerlocation.untouched" class="alert alert-danger" role="alert">
+              <small *ngIf="sellerlocation.errors?.['required']">Seller`s Location is required</small>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="form-outline">
+            <label class="form-label fw-bold" for="form6Example2">Phone</label>
+            <input type="text" id="form6Example2" class="form-control" placeholder="Phone Number" name="phone"
+              #sellerphone="ngModel" [(ngModel)]="data.phone" required pattern="^\d{10}$" />
+            <div [hidden]="sellerphone.valid || sellerphone.untouched" class="alert alert-danger" role="alert">
+              <small *ngIf="sellerphone.errors?.['required']">Phone is required</small>
+              <small *ngIf="sellerphone.errors?.['pattern']">Phone is not valid</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Message input -->
+      <div class="form-outline mb-4">
+        <label class="form-label fw-bold" for="form6Example7">Description</label>
+        <textarea class="form-control" id="form6Example7" rows="4" placeholder="More detail of item" name="moredetails"
+          #itemmoredeatails="ngModel" [(ngModel)]="data.moredetails" required></textarea>
+        <div [hidden]="itemmoredeatails.valid || itemmoredeatails.untouched" class="alert alert-danger" role="alert">
+          <small *ngIf="itemmoredeatails.errors?.['required']">The details is required</small>
+        </div>
+      </div>
+
+      <div class="form-outline mb-4">
+        <label class="form-label fw-bold" for="form6Example7">Specification</label>
+        <textarea class="form-control" id="form6Example7" rows="4" placeholder="More detail of item"
+          name="morespecification" #itemmorespecification="ngModel" [(ngModel)]="data.itemmorespecification"></textarea>
+      </div>
+    </div>
+    <div class="buttons">
+      <a type="submit" class="btn mb-4" [routerLink]="['/mainpage']">Back</a>
+      <button [disabled]="addProduct.invalid" type="submit" class="btn mb-4 form-button">Update</button>
+    </div>
+  </form>
+  <div class="alert alert-primary mt-3" role="alert" *ngIf="success">You Product Successfully Updated</div>
+</div>
+<!-- Submit button -->
+<!-- <div class="buttons">
+    <a type="submit" class="btn mb-4">Back</a>
+    <button [disabled]="addProduct.invalid" type="submit" class="btn mb-4 form-button">Continue</button>
+  </div> -->

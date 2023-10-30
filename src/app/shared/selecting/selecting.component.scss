@@ -1,0 +1,18 @@
+$important-color: #ffffff;
+$third-color: #2F2F2F;
+$secondary-color: #24A843;
+$primary-color: #050505;
+
+.btn-secondary {
+  border-color: $important-color;
+  color: $primary-color;
+  background-color: transparent;
+}
+
+
+@media screen and (max-width:399px) {
+
+  .filter-nav{
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="d-flex flex-column-reverse flex-lg-row align-items-start pb-5">
+    <div class="col-12 col-lg-3 rounded border p-3">
+      <ul class="p-4">
+        <h3>Account Settings</h3>
+        <li class="pb-3 pt-3"><a [routerLink]="['/myaccount']" class="list-items">My Account</a></li>
+        <li class="pb-3"><a [routerLink]="['/myorders']" class="list-items">My Orders</a></li>
+        <li class="pb-3"><a [routerLink]="['/mylistings']" class="list-items">My Listings</a></li>
+        <li class="pb-3"><a type="button"  (click)="logout()" class="text-danger">Log-out</a></li>
+      </ul>
+    </div>
+    <div class="col-12 col-lg-9 pb-2 px-5">
+      <div class="border border-1 rounded p-3">
+       <div class="p-3 text-center text-md-start">
+        <h3 class="pt-3 pb-3">Account overview</h3>
+        <h5>Personal Details</h5>
+        <div class="pt-5 product-list text-center">
+          <form #addAccount="ngForm" (ngSubmit)="onSubmit()">
+              <div class="row mb-4">
+                <div class="col-sm-12 col-md-6 ">
+                  <div class="form-outline">
+                    <input type="text" id="form6Example1" class="form-control form-control-lg text-center" placeholder="Name" name="FullName"
+                      [(ngModel)]="username"  required />
+                    <!-- <div [hidden]="FullName.valid || FullName.untouched" class="alert alert-danger" role="alert">
+                      <small *ngIf="FullName.errors?.['required']">First Name is required</small>
+                    </div> -->
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 pt-2 pt-md-0">
+                  <div class="form-outline">
+                    <input type="text" id="form6Example2" class="form-control form-control-lg  text-center" placeholder="Email" name="Email"
+                      [(ngModel)]="email" required />
+                    <!-- <div [hidden]="Email.valid || Email.untouched" class="alert alert-danger" role="alert">
+                      <small *ngIf="Email.errors?.['required']">Email is required</small>
+                    </div> -->
+                  </div>
+                </div>
+              </div>
+              <div class="row mb-5">
+                <div class="col-sm-12 col-md-6">
+                  <div class="form-outline">
+                    <input type="text" id="form6Example1" class="form-control form-control-lg  text-center" placeholder="Location" name="Location"
+                    [(ngModel)]="location" required />
+                                  <!-- <div [hidden]="Location.valid || Location.untouched" class="alert alert-danger" role="alert">
+                                    <small *ngIf="Location.errors?.['required']">Location is required</small>
+                                  </div> -->
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-6 pt-2 pt-md-0">
+                  <div class="form-outline">
+                    <input type="text" id="form6Example2" class="form-control form-control-lg  text-center" placeholder="Phone" name="Phone"
+                    [(ngModel)]="phone" required />
+                                  <!-- <div [hidden]="Phone.valid || Phone.untouched" class="alert alert-danger" role="alert">
+                                    <small *ngIf="Phone.errors?.['required']">Phone is required</small>
+                                  </div> -->
+                  </div>
+                </div>
+              </div>
+              <button [disabled]="addAccount.invalid" type="submit" class="btn btn-success rounded-pill w-100">Update Profile</button>
+          </form>
+        </div>
+       </div>
+      </div>
+    </div>
+  </div>
+<div class="alert alert-success mt-3" role="alert" *ngIf="success">You Account Successfully Updated</div>
+</div>

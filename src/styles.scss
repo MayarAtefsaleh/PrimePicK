@@ -1,0 +1,28 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+$primary-color: #050505;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+$important-color: #ffffff;
+$font-family: "Inter", sans-serif; // Replace with your preferred font name
+
+* {
+  font-family: $font-family;
+  overflow-x: hidden;
+
+scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* Internet Explorer 10+ */
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+.container-fluid{
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+

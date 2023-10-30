@@ -1,0 +1,7 @@
+<div class="card">
+  <img src="{{data.image}}" class="card-img-top rounded" alt="..." routerLink="/details/{{data.id}}">
+  <div class="card-body">
+    <h5 class="card-title">{{data.title}}</h5>
+    <p class="card-text fw-bold pt-1">{{data.price}} <a type="button" class="btn rounded-pill w-50 float-end" (click)="add()">Add to cart</a></p>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+$important-color: #ffffff;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+$secondary-color: #24A843;
+$primary-color: #050505;
+
+
+.form{
+  border: transparent;
+  margin: auto;
+  outline: none;
+}
+
+.btn-success{
+  background-color: $secondary-color;
+}
+
+.remove-btn:hover{
+  background-color: rgb(245, 25, 25);
+  color: #ffffff;
+}
+.image{
+  width: 50px;
+  height: 80px;
+}
+
+.around-image{
+  width: 200px;
+  height: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+
+

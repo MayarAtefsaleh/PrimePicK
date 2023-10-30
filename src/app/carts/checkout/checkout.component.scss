@@ -1,0 +1,59 @@
+$important-color: #ffffff;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+$secondary-color: #24A843;
+$primary-color: #050505;
+
+
+
+.form {
+  border: transparent;
+  margin: auto;
+  width: 30px;
+  outline: none;
+  color: green;
+  font-weight: bolder;
+}
+
+.btn-success {
+  background-color: $secondary-color;
+}
+
+.image {
+  width: 50px;
+  height: 50px;
+}
+
+.around-image {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-check{
+  padding: 10px 0px 10px 40px;
+}
+
+.form-select{
+  border-left: 0px;
+  padding-left: 0px;
+}
+
+.input-group-text{
+  background-color: transparent;
+}
+
+.ng-valid:not(form){
+  border: 1px solid green;
+}
+
+.ng-invalid:not(form) {
+  border: 1px solid red;
+}
+
+.text-truncate
+{
+  width: 200px;
+}

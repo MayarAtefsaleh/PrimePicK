@@ -1,0 +1,50 @@
+$important-color: #ffffff;
+$third-color: #2F2F2F;
+$secondary-color: #24A843;
+$primary-color: #050505;
+
+
+
+.card {
+  border-color: $important-color;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+
+.card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card img {
+  transition: 1s ease;
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.card img:hover {
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  transition: 1s ease;
+  -moz-transform: scale(0.9);
+  -o-transform: scale(0.9);
+}
+
+.card-body {
+  height: 150px;
+  /* ارتفاع ثابت لنص الوصف */
+  overflow-y: auto;
+  /* إضافة شريط تمرير للنص إذا تجاوز الارتفاع المحدد */
+}
+
+.card-title {
+  height: 50px;
+}
+
+.card-text {
+  height: 50px;
+}

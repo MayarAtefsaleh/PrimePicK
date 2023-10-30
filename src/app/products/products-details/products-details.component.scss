@@ -1,0 +1,65 @@
+$important-color: #ffffff;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+$secondary-color: #24A843;
+$primary-color: #050505;
+
+
+span{
+  color: $secondary-color;
+}
+
+.btn{
+  background-color: $secondary-color;
+  color: $important-color;
+  width: 60px;
+}
+
+.big-img{
+  max-height: 400px;
+  width: 100%;
+}
+
+.form-control{
+  border: transparent;
+}
+
+@media only screen and (max-width: 1000px) {
+
+  .big-img {
+      transform: translateX(0px);
+      -webkit-transform: translateX(0px);
+      -moz-transform: translateX(0px);
+      -ms-transform: translateX(0px);
+      -o-transform: translateX(0px);
+      width: 100%;
+}
+
+.right-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row{
+  align-items: center;
+  padding-top: 10px;
+}
+.col-7,.col-9{
+  width: 100%;
+}
+
+.col-6 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.px-5 {
+  padding-right:0px!important;
+   padding-left: 0px!important;
+}
+}
+

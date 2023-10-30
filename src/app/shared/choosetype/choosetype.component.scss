@@ -1,0 +1,71 @@
+$button-border-radius: 50px;
+$important-color: #ffffff;
+$secondary-color: #24A843;
+$primary-color: #050505;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+
+
+.btn {
+  border-radius: $button-border-radius;
+  background-color: $secondary-color;
+  color: $important-color;
+  text-align: center;
+  align-items: center;
+  -webkit-border-radius: $button-border-radius;
+  -moz-border-radius: $button-border-radius;
+  -ms-border-radius: $button-border-radius;
+  -o-border-radius: $button-border-radius;
+  width: 250px;
+}
+
+.nav-link {
+  color: $primary-color ;
+}
+
+.navbar-brand {
+  font-weight: bold;
+}
+
+span{
+  color: $secondary-color;
+}
+.icon{
+  background-color: rgb(224, 221, 221);
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  width: 50px;
+  height: 50px;
+}
+.card-body{
+  height: 250px;
+}
+
+.card-body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-text{
+  color: $third-color;
+  font-size: 13px;
+}
+
+.card :hover{
+  border: 3px solid $secondary-color;
+}
+
+.card-body :hover{
+  border:none
+}
+
+a{
+  text-decoration: none;
+}
+
+

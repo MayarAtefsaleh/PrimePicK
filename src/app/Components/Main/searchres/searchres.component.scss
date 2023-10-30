@@ -1,0 +1,14 @@
+img {
+  object-fit: contain;
+  background-color: cover;
+}
+
+
+@media screen and (max-width:500px) {
+
+  .small-desc {
+    font-size: 15px;
+    text-overflow: ellipsis;
+    text-wrap: nowrap;
+  }
+}

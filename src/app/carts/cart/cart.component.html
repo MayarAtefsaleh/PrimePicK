@@ -1,0 +1,60 @@
+<div class="container pb-5">
+  <div class="card-header py-3">
+    <h5 class="mb-0 fw-bold fs-2">Cart</h5>
+    <span>You have {{cartProducts.length}} items in your cart</span>
+    <button class="btn btn-success float-end" (click)="clearAll()">Clear all cart</button>
+  </div>
+  <div class="border border-1 rounded w-100 p-5">
+    <div *ngFor="let item of cartProducts; let index=index">
+      <!-- Single item -->
+      <div class="row align-items-center justify-content-between d-flex flex-md-row" >
+        <div class="col-12 mb-4 mb-lg-0 d-flex flex-column flex-lg-row align-items-center align-items-lg-start justify-content-between">
+          <!-- Image -->
+          <div class="border rounded around-image col-lg-3">
+            <img src="{{item.image}}" class="image" alt="Product img" />
+          </div>
+          <!-- Image -->
+          <div class="text-center text-lg-start pt-3 pt-lg-0 col-12 col-lg-3 px-lg-3 px-xl-0">
+            <p><strong>{{item.title}}</strong></p>
+            <p>{{item.category}}</p>
+            <strong>{{item.price}} $</strong><br>
+            <!-- <strong>{{item.quantity}}</strong> -->
+          </div>
+          <!-- Quantity -->
+          <div class="d-flex justify-content-center align-items-center col-12 col-lg-3 pt-3 pt-lg-0 align-self-center">
+            <button class="btn btn-ligth border border-1 w-25" (click)="minus(index)">-</button>
+            <input id="form1" min="0" name="quantity" (keyup)="detectChange()" [(ngModel)]="item.quantity" type="number"
+              class="text-center form p-1" />
+            <button class="btn btn-ligth border border-1 w-25" (click)="plus(index)">+</button>
+          </div>
+          <!-- Quantity -->
+          <div class=" d-flex flex-column align-items-center align-items-lg-end justify-content-center col-12 col-lg-3 pt-3 pt-lg-0 ">
+            <button class="btn rounded-pill border border-1 border-danger mb-3 remove-btn" (click)="deleteProduct(index)">Remove</button>
+            <strong class="mx-3">{{ calculateItemTotal(item) }} $</strong>
+          </div>
+        </div>
+        <hr class="my-4" />
+      </div>
+    </div>
+  </div>
+  <!-- Single item -->
+  <div class="d-flex justify-content-between pt-4 ">
+    <div class="col-6 d-flex flex-column">
+      <h1>Total</h1>
+      <p class="text-secondary">Shipping &amp; taxes are calculated at check out</p>
+    </div>
+    <div class=" col-5 d-flex flex-column align-items-end justify-content-center ">
+      <strong class="px-3 pb-2">{{total}}$</strong>
+      <a class="btn btn-success rounded-pill w-100" [routerLink]="['/checkout']" >Check Out</a>
+    </div>
+  </div>
+  <!-- <div class="alert alert-success mt-3" role="alert" *ngIf="success">You Order Successfully Send</div> -->
+  <div class="container pt-5">
+    <div class="d-flex flex-column justify-content-between">
+      <h1 class="fw-bold fst-italic fs-4 px-1">You may Also Like </h1>
+      <app-limited-products></app-limited-products>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,90 @@
+<div class="container d-flex justify-content-center align-items-center mb-5">
+  <div class="row align-items-center justify-content-center">
+    <div class="col-lg-6">
+      <br>
+      <a class="explore-item px-3 py-2" href="#">Explore,Buy &amp; Sell</a>
+      <h1 class="fw-bold pt-4 pt-2">Your One-Stop</h1>
+      <h1 class="fw-bold pb-4 pt-2 "> Ecommerce <span class="green-color fst-italic">MarketPlace</span></h1>
+      <p class="gray-color text-wrap">Explore a world limiteless possibilities.Join our community of buyers and sellers
+        today to embark on a journey of
+        convenience and connection</p>
+      <div class="d-flex pt-3 pb-4 px-lg-2 flex-column">
+       <div class="d-flex">
+        <input type="search" class="form-control px-4 py-2" placeholder="Enter Key Word" aria-label="Search"
+          aria-describedby="search-addon" (keyup)="searchProduct($event)" (blur)="hideSearch()" #searchInput />
+        <button type="button" class="btn btn-search mx-2 px-4 py-2" (click)="submitSearch(searchInput.value)">Search</button>
+       </div>
+        <ul class="search-bar"  *ngIf="searchResult && searchResult.length > 0">
+          <li *ngFor="let item of searchResult">
+            <a>{{item.title}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-lg-6">
+    <img src="assets/images/man5.png" class="img-fluid mt-5">
+    </div>
+  </div>
+</div>
+
+<div class="container pt-5  ">
+  <div class="row justify-content-center text-center">
+    <div class="col-md-3 d-flex flex-column pb-4">
+      <i class="bi bi-shop fs-3 fw-bolder"></i>
+      <span class="fw-bold fs-2">{{vendorscount + "+"}}</span>
+      <span>Vendors</span>
+    </div>
+    <div class="col-md-3 d-flex flex-column pb-4">
+    <i class="bi bi-basket fs-3 fw-bolder"></i>
+      <span class="fw-bold fs-2">{{productscount + "M +"}}</span>
+      <span>Available Products</span>
+    </div>
+    <div class="col-md-3 d-flex flex-column pb-4">
+      <i class="bi bi-person fs-3 fw-bolder"></i>
+      <span class="fw-bold fs-2">{{customerscount + "+"}}</span>
+      <span>Customers</span>
+    </div>
+    <div class="col-md-3 d-flex flex-column pb-4">
+      <i class="bi bi-currency-dollar fs-3 fw-bolder"></i>
+      <span class="fw-bold fs-2">{{salescount + "M +"}}</span>
+      <span>Daily Sales</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="fw-bold"><span class="green-color fst-italic px-3 mt-5">Trending</span>Picks</h1>
+  <app-limited-products></app-limited-products>
+</div>
+
+<div class="container flex-column justify-content-center align-items-center">
+  <div class="d-flex flex-column flex-md-row justify-content-between text-center text-md-start">
+  <h1 class="fw-bold"><span class="green-color fst-italic px-3">Products </span> Picks</h1>
+  <a [routerLink]="['/products']" routerLinkActive="active" class="pt-4 text-decoration-none">See All <i class="bi bi-arrow-right px-2"></i> </a>
+  </div>
+  <hr>
+<app-all-products></app-all-products>
+ <img src="assets/images/cover.png" class="img-fluid pb-5">
+
+<div class="container pt-5">
+  <div class="d-flex flex-column flex-md-row justify-content-between text-center text-md-start">
+    <h1 class="fw-bold"><span class="green-color fst-italic px-3 mt-5">Vehicles </span> Picks</h1>
+    <a [routerLink]="['/vehicles']" routerLinkActive="active" class="pt-4 text-decoration-none">See All <i class="bi bi-arrow-right px-2"></i>
+    </a>
+  </div>
+  <hr>
+  <app-vehicles></app-vehicles>
+</div>
+
+<div class="container pt-5">
+  <div class="d-flex flex-column flex-md-row justify-content-between text-center text-md-start">
+    <h1 class="fw-bold"><span class="green-color fst-italic px-3 mt-5">Housing </span> Picks</h1>
+    <a [routerLink]="['/houses']" routerLinkActive="active" class="pt-4 text-decoration-none">See All <i
+        class="bi bi-arrow-right px-2"></i>
+    </a>
+  </div>
+  <hr>
+  <app-houses></app-houses>
+</div>
+</div>
+

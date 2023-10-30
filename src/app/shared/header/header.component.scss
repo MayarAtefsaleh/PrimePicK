@@ -1,0 +1,30 @@
+$button-border-radius: 50px;
+$important-color: #ffffff;
+$secondary-color: #24A843;
+$primary-color: #050505;
+
+
+.btn {
+  border-radius: $button-border-radius;
+  background-color: $secondary-color;
+  color: $important-color;
+  text-align: center;
+  align-items: center;
+  -webkit-border-radius: $button-border-radius;
+  -moz-border-radius: $button-border-radius;
+  -ms-border-radius: $button-border-radius;
+  -o-border-radius: $button-border-radius;
+}
+
+.nav-link{
+  color:$primary-color ;
+}
+
+.navbar-brand{
+  font-weight: bold;
+}
+
+.nav-link:hover{
+  color: $secondary-color;
+}
+

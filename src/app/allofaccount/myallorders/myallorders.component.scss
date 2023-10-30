@@ -1,0 +1,25 @@
+$important-color: #ffffff;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+$secondary-color: #24A843;
+$primary-color: #050505;
+
+
+
+
+.btn-success {
+  background-color: $secondary-color;
+}
+
+a {
+  text-decoration: none;
+}
+
+.list-items {
+  color: $primary-color;
+}
+
+.list-items:hover {
+  color: $secondary-color;
+}
+

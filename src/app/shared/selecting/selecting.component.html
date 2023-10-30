@@ -1,0 +1,5 @@
+<div class="filter-nav d-flex px-3">
+  <button type="button" class="btn btn-secondary btn-sm" (click)="getdetails()">All</button>
+  <button type="button" class="btn btn-secondary btn-sm" *ngFor="let option of data" value="{{option}}"
+    (click)="detectChanges($event)">{{option}}</button>
+</div>

@@ -1,0 +1,73 @@
+$button-border-radius: 50px;
+$important-color: #ffffff;
+$secondary-color: #24A843;
+$primary-color: #050505;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+
+.box__input {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+span {
+  color: $secondary-color;
+}
+
+.icon {
+  background-color: rgb(224, 221, 221);
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+  width: 80px;
+  height: 80px;
+}
+
+.btn {
+  border-radius: $button-border-radius;
+  background-color: $important-color;
+  color: $primary-color;
+  border: 1px solid rgb(125, 122, 122);
+  text-align: center;
+  align-items: center;
+  -webkit-border-radius: $button-border-radius;
+  -moz-border-radius: $button-border-radius;
+  -ms-border-radius: $button-border-radius;
+  -o-border-radius: $button-border-radius;
+  width: 200px;
+}
+
+.btn:hover {
+  background-color: $secondary-color;
+  color: $important-color;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 10px;
+
+}
+
+
+.ng-valid:not(form) {
+  border: 1px solid green;
+}
+
+.ng-invalid:not(form) {
+  border: 1px solid red;
+}
+
+
+@media (min-width: 992px) {
+  #myDiv {
+    width: 50%;
+    margin: auto;
+  }
+}

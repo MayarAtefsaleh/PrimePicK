@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="d-flex flex-column-reverse flex-lg-row align-items-start justify-content-between pb-5">
+    <div class="col-12 col-lg-3 rounded border p-3">
+      <ul class="p-4 text-center text-lg-start">
+        <h3>Account Settings</h3>
+        <li class="pb-3 pt-3"><a [routerLink]="['/myaccount']" class="list-items">My Account</a></li>
+        <li class="pb-3"><a [routerLink]="['/myorders']" class="list-items">My Orders</a></li>
+        <li class="pb-3"><a [routerLink]="['/mylistings']" class="list-items">My Listings</a></li>
+        <li class="pb-3"><a type="button" (click)="logout()" class="text-danger">Log-out</a></li>
+      </ul>
+    </div>
+    <div class="col-12 col-lg-9 pb-2 px-5">
+      <div class="border border-1 rounded p-3 float-lg-end" style="max-width: 900px;">
+        <h3 class="pt-3 text-center text-lg-start">My Listings</h3>
+        <div class="pt-5 product-list text-center">
+          <!-- Single item -->
+          <!-- <img src="assets/images/noorders.webp" class="w-50 h-100">
+          <p class="fs-4 text-secondary">You dont have any orders Yet !</p> -->
+          <table class=" table table-hover table-bordered">
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of products">
+                <td><img src="{{item.addphoto}}"></td>
+                <td>{{item.title}}</td>
+                <td>{{item.category}}</td>
+                <td class="fw-bold">{{item.price}}</td>
+                <td><button class="btn btn-danger" (click)="deleteProduct(item.id)">Delete</button><br>
+                <a class="btn btn-warning mt-lg-3" routerLink="/updateproduct/{{item.id}}">Update</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="alert alert-warning mt-3" role="alert" *ngIf="success">You Product Successfully Deleted</div>
+</div>
+<!-- <img src="https://www.efficy.com/wp-content/uploads/2019/03/crm-for-e-commerce-900x412.jpg" class="img-fluid mb-5 rounded" style="height: 400px;"> -->

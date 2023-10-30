@@ -1,0 +1,24 @@
+$important-color: #ffffff;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+$secondary-color: #24A843;
+$primary-color: #050505;
+
+
+
+a {
+  text-decoration: none;
+}
+
+.list-items {
+  color: $primary-color;
+}
+
+.list-items:hover {
+  color: $secondary-color;
+}
+
+.btn:hover {
+  background-color: $secondary-color;
+  color: $important-color;
+}

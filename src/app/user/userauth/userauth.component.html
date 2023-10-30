@@ -1,0 +1,163 @@
+<div class="container">
+  <section class="h-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card-registration my-4 user-border">
+            <div class="row d-flex flex-row-reverse g-0 align-items-center">
+              <div class="col-xl-6 d-none d-xl-block" style="position: relative; text-align: center;">
+                <div class="centered">
+                  <h2 class="new-text mt-5">Peace <br> Love <br> Prime Pick ♥</h2>
+                </div>
+                <img src="assets/images/userauth.png" alt="Sample photo"
+                  class="img-fluid"/>
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                  <a class="explore-item btn p-3 mb-5" routerLink="/mainpage">Go back to home</a>
+
+                  <h2 class="text-center pb-5 welcome-text">Welcome to prime Pick</h2>
+                  <h3 class="mb-5 fw-bold">Create your account</h3>
+
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <a href="" class="form-control form-control-lg text-nowrap text-center"><img
+                            src="assets/images/googleicon.webp" width="22px"> Sign up with Google</a>
+                        <hr>
+                      </div>
+
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <a href="" class="form-control form-control-lg text-nowrap text-center "><img
+                            src="assets/images/facebookicon.png" width="22px"> FaceBook</a>
+                        <hr>
+                      </div>
+                    </div>
+                  </div>
+                  <form [formGroup]="userRegisterForm" (ngSubmit)="signUp(userRegisterForm.value)">
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example1m1">Email</label>
+                          <input type="text" id="form3Example1m1" class="form-control form-control-lg"
+                            [ngClass]="{'is-invalid': Email?.invalid && (Email?.dirty || Email?.touched),'is-valid': Email?.valid && Email?.dirty,'touched': Email?.touched,'untouched': Email?.untouched}"
+                            placeholder="name@yahoo.com" name="email" formControlName="Email" id="Email" required />
+                          <div [hidden]="Email?.valid || Email?.untouched" class="alert alert-warning" role="alert">
+                            <small *ngIf="Email?.errors?.['required']">Email is required</small>
+                            <small *ngIf="Email?.errors?.['pattern']">Email must be matched pattern </small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example1n1">Full Name</label>
+                          <input type="text" id="form3Example1n1" class="form-control form-control-lg"
+                            placeholder="e.g. Mayar Atef" name="fullname" formControlName="FullName" id="FullName"
+                            required
+                            [ngClass]="{'is-invalid': FullName?.invalid && (FullName?.dirty || FullName?.touched),'is-valid': FullName?.valid && FullName?.dirty,'touched': FullName?.touched,'untouched': FullName?.untouched}" />
+                          <div [hidden]="FullName?.valid || FullName?.untouched" class="alert alert-warning"
+                            role="alert">
+                            <small *ngIf="FullName?.errors?.['required']">FullName is required</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example1m1">Location</label>
+                          <input type="text" id="form3Example1m1" class="form-control form-control-lg"
+                            placeholder="Write your country" name="location" formControlName="Location" id="Location"
+                            required
+                            [ngClass]="{'is-invalid': Location?.invalid && (Location?.dirty || Location?.touched),'is-valid': Location?.valid && Location?.dirty,'touched': Location?.touched,'untouched': Location?.untouched}" />
+                          <div [hidden]="Location?.valid || Location?.untouched" class="alert alert-warning"
+                            role="alert">
+                            <small *ngIf="Location?.errors?.['required']">Location is required</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example1n1">Phone</label>
+                          <input type="text" id="form3Example1n1" class="form-control form-control-lg"
+                            placeholder="Enter Phone" name="phone" formControlName="Phone" id="Phone" required
+                            [ngClass]="{'is-invalid': Phone?.invalid && (Phone?.dirty || Phone?.touched),'is-valid': Phone?.valid && Phone?.dirty,'touched': Phone?.touched,'untouched': Phone?.untouched}" />
+                          <div [hidden]="Phone?.valid || Phone?.untouched" class="alert alert-warning" role="alert">
+                            <small *ngIf="Phone?.errors?.['required']">Phone is required</small>
+                            <small *ngIf="Phone?.errors?.['pattern']">Phone must be matched pattern </small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example1m1">Password</label>
+                          <input type="password" id="form3Example1m1" class="form-control form-control-lg"
+                            placeholder="Enter password" name="password" formControlName="Password" id="Password"
+                            required
+                            [ngClass]="{'is-invalid': Password?.invalid && (Password?.dirty || Password?.touched),'is-valid': Password?.valid && Password?.dirty,'touched': Password?.touched,'untouched': Password?.untouched}" />
+                          <div [hidden]="Password?.valid || Password?.untouched" class="alert alert-warning"
+                            role="alert">
+                            <small *ngIf="Password?.errors?.['required']">Password is required</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-md-6 mb-4">
+                        <div class="form-outline">
+                          <label class="form-label" for="form3Example1n1">Confirm Password</label>
+                          <input type="password" id="form3Example1n1" class="form-control form-control-lg"
+                            placeholder="Repeat password" name="confirmpassword" formControlName="ConfirmPassword"
+                            id="ConfirmPassword" required
+                            [ngClass]="{'is-invalid': ConfirmPassword?.invalid && (ConfirmPassword?.dirty || ConfirmPassword?.touched),'is-valid': ConfirmPassword?.valid && ConfirmPassword?.dirty,'touched': ConfirmPassword?.touched,'untouched': ConfirmPassword?.untouched}" />
+                          <div
+                            *ngIf="(ConfirmPassword?.touched) && (ConfirmPassword?.touched && Password?.touched) && (ConfirmPassword?.invalid || userRegisterForm?.errors?.['UnMatchPassword'])"
+                            class="alert alert-warning" role="alert">
+                            <small *ngIf="ConfirmPassword?.errors?.['required']">Password Confirm is required</small>
+                            <small *ngIf="userRegisterForm?.errors?.['UnMatchPassword']">Password Confirm must match
+                              password</small>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-outline mb-2">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="Agreetermscheck" required  name="Agreetermscheck" formControlName="Agreetermscheck">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          By signing up , you are creating a primepick account, and you agree to our <a href=""><span
+                              class="text-primary">terms of Use</span></a> and <a href=""><span
+                              class="text-primary">private
+                              Policy</span></a>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div class="form-outline mb-0">
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="EmailAboutMe" required  name="EmailAboutMe" formControlName="EmailAboutMe">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Email me about product updates and resources
+                        </label>
+                      </div>
+                    </div>
+                    <div class="d-flex justify-content-center ">
+                      <button [disabled]="userRegisterForm.invalid" type="submit"
+                        class="btn btn-success btn-lg ms-2 w-100 rounded-pill m-5">Sign Up</button>
+                    </div>
+                  </form>
+                  <div class="alert alert-success mt-3" role="alert" *ngIf="success">Account Successfully Created</div>
+                  <p>Already have an account? <a routerLink="/userlogin"><span class="text-success">Login Here</span></a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,30 @@
+$important-color: #ffffff;
+$third-color: #2F2F2F;
+$fourth-color: #ACACAC;
+
+.navbar-brand {
+  font-size: 20px;
+}
+
+.text-gray{
+  color: $fourth-color;
+}
+
+hr{
+  width: 100%;
+  border-color: $important-color;
+  border-width: 2px;
+  opacity: 0.5;
+}
+
+footer{
+  background-color: $third-color;
+}
+
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  color: $important-color;
+}

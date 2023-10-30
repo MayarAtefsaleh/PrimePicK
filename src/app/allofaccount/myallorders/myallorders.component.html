@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="d-flex flex-column-reverse flex-lg-row align-items-start pb-5">
+    <div class="col-12 col-lg-3 rounded border p-3">
+      <ul class="p-4">
+        <h3>Account Settings</h3>
+        <li class="pb-3 pt-3"><a [routerLink]="['/myaccount']" class="list-items">My Account</a></li>
+        <li class="pb-3"><a [routerLink]="['/myorders']" class="list-items">My Orders</a></li>
+        <li class="pb-3"><a [routerLink]="['/mylistings']" class="list-items">My Listings</a></li>
+        <li class="pb-3"><a type="button" (click)="logout()" class="text-danger">Log-out</a></li>
+      </ul>
+    </div>
+    <div class="col-12 col-lg-9 pb-2 px-5">
+      <div class="border border-1 rounded p-3 float-lg-end">
+        <h3 class="pt-3">My Orders</h3>
+        <div class="pt-5 product-list text-center">
+         <img src="assets/images/noorders.webp" class="w-50">
+          <p class="fs-4 text-secondary">You dont have any orders Yet !</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
